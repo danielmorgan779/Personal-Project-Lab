@@ -1009,6 +1009,18 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 545040597560604611, guid: d204a123a30bba643be161e9a9a2f132, type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 545040597560604611, guid: d204a123a30bba643be161e9a9a2f132, type: 3}
+      propertyPath: m_Acceleration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 545040597560604611, guid: d204a123a30bba643be161e9a9a2f132, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5023466471060756399, guid: d204a123a30bba643be161e9a9a2f132, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
