@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1033881964126768542, guid: 62913280a64ca0c4c8f66a3db78f01ee, type: 3}
+      propertyPath: m_SkinWidth
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 8743384368856343950, guid: 62913280a64ca0c4c8f66a3db78f01ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
