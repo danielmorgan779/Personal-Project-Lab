@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
-    private InputActionMap.OnFootActions onFoot;
+    private PlayerInput.OnFootActions onFoot;
 
     private PlayerMotor motor;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //tell the playermotor to move using the value from our movement action.
+        //tell the playermotor to move using the value from our movement action
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
     }
     private void OnEnable()
