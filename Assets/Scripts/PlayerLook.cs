@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Camera cam;
+    private float xRotation = 0f;
+
+    public float xSensitivity = 30f;
+    public float ySensitivity = 30f;
+
+    public void ProcessLook(Vector2 input)
     {
-        
+        float mouseX = input.x;
+        float mouseY = input.y;
+        //calculate camera rotation for up and down
+        xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
+        xRotation = Mathf.Clamp(xRotation, -80, 8);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
