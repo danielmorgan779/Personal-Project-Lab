@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseMovment : MonoBehaviour
 {
 
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity = 550f;
 
     float xRotation = 0f;       
     float yRotation = 0f;
@@ -30,7 +30,7 @@ public class MouseMovment : MonoBehaviour
         xRotation -= mouseY;
 
         // Clamp the rotation
-        xRotation = Mathf.Clamp(xRotation, 90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, topClamp, bottomClamp);
 
         // Rotation around the y axis (Look left and right)
         yRotation += mouseX;
