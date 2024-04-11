@@ -21,6 +21,18 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
-        throw new NotImplementedException(); 
+        // Instantiate the bullet
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        // Shoot the bullet
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
+        // Destroy the bullet after some time passes
+        StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
+
+    }
+
+    private IEnumerator DestroyBulletAfterTime(GameObject bullet, float bulletPrefabLifeTime)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(bullet);
     }
 }

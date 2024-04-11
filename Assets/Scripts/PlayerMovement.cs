@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 veloctiy;
 
     bool isGrounded;
-    bool isMoving;
+    //bool isMoving; 
 
     private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
     
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         // Executing the jump
         controller.Move(veloctiy * Time.deltaTime);
 
-        if (lastPosition != gameObject.transform.position && isGrounded == true)
+        /*if (lastPosition != gameObject.transform.position && isGrounded == true)
         {
             isMoving = true;
             // for later use
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
             // for later use
-        }
+        }*/
 
         lastPosition = gameObject.transform.position;
     }
