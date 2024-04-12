@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,18 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
-        throw new NotImplementedException(); 
+        // Instantiate the bullet prefab at a position
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        // Shoots the bullet
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
+        // Destroys the bullet after some time
+        StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
+
+    }
+
+    private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(bullet);
     }
 }
