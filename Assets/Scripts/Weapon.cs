@@ -1,9 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Camera playerCamera;
+
+    // Shooting
+    public bool isShooting, readyToShoot;
+    bool allowReset = true;
+    public float shootingDelay = 2f;
+
+
+
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float bulletVelocity = 30;
